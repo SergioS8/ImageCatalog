@@ -1,8 +1,10 @@
-﻿//import { home } from 'home/reducers';
+﻿import catalogInfoReducer from 'catalog/reducers/catalog-reducer';
+import catalogDetailsReducer from 'catalogDetails/reducers/catalog-details-reducer';
 import { configureStore, getDefaultMiddleware, combineReducers } from '@reduxjs/toolkit';
 
 const rootReducer = combineReducers({
-    //home: home
+    catalogs: catalogInfoReducer,
+    catalogDetails: catalogDetailsReducer
 });
 
 const middleware = getDefaultMiddleware({

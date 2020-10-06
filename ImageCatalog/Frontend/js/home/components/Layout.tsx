@@ -11,7 +11,7 @@ const Layout: React.FC<IProps> = ({ children }) => {
     return (
         <>
             <NavHeader />
-            <Container>
+            <Container className="main-box">
                 {children}
             </Container>
             <Footer />
