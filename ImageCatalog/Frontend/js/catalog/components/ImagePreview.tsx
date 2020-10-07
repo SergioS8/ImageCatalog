@@ -1,4 +1,4 @@
-import { IImageItem } from 'api/types/IImageItem';
+import { IImageItem } from 'api/types';
 import * as React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import "../styles/Catalog.less";
