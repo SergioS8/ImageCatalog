@@ -47,7 +47,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf wwwroot/dist",
-    "build": "npm run clean && webpack -p",
+    "build": "webpack",
     "watch": "webpack --watch"
   },
   "keywords": [],
