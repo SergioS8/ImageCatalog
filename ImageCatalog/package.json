@@ -42,12 +42,13 @@
     "typescript": "^3.8.3",
     "url-loader": "^4.1.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11"
+    "webpack-cli": "^3.3.11",
+    "rimraf": "^3.0.2"
   },
   "main": "index.js",
   "scripts": {
     "clean": "rimraf wwwroot/dist",
-    "build": "webpack",
+    "build": "npm run clean && webpack",
     "watch": "webpack --watch"
   },
   "keywords": [],
@@ -68,6 +69,8 @@
     "redux-thunk": "^2.3.0",
     "rimraf": "^3.0.2",
     "webpack-merge": "^5.0.9",
-    "webpackbar": "^4.0.0"
+    "webpackbar": "^4.0.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
   }
 }
