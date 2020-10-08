@@ -1,5 +1,6 @@
 using System;
 using ImageCatalog.Common;
+using ImageCatalog.Repositories;
 using ImageCatalog.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -41,6 +42,8 @@ namespace ImageCatalog
 
             //DI
             services.AddScoped<IBaseService, BaseService>();
+            services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<IFileSystemRepository, FileSystemRepository>();
 
         }
 
@@ -54,7 +57,7 @@ namespace ImageCatalog
             app.UseResponseCompression();
             app.UseResponseCaching();
 
-            //кэшируем статические файлы, картинки в том числе
+            //кэшируем статические файлы на 30 мин. 
             app.UseStaticFiles(new StaticFileOptions()
             {
                 OnPrepareResponse = ctx =>

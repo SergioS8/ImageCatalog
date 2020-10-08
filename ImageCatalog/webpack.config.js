@@ -118,7 +118,7 @@ const baseConfig = {
         ]),
         function () {
             this.plugin("done", function (stats) {
-                if (__PROD__ && stats.compilation.errors && stats.compilation.errors.length) {
+                if (stats.compilation.errors && stats.compilation.errors.length) {
                     console.log(stats.compilation.errors);
                     throw new Error("webpack build failed.");
                 }

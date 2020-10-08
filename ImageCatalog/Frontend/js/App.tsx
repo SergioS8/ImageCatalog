@@ -19,3 +19,4 @@ export const App = () => (
 );
 
 export const CATALOG_URL = "/base";
+export const IMAGE_URL = "/image";

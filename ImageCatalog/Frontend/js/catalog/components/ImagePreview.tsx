@@ -15,6 +15,7 @@ const ImagePreview: React.FC<IProps> = ({ item }) => {
                 <div className="img-box">
                     <img
                         className="img-preview"
+                        //лого-картинка с кэшированием
                         src={item.Path}
                         alt={item.Name}
                     />

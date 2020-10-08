@@ -1,6 +1,7 @@
 import { IImageItem } from 'api/types';
 import * as React from 'react';
 import { Button } from 'react-bootstrap';
+import { IMAGE_URL } from 'App';
 
 import "../styles/CatalogDetails.less";
 
@@ -16,7 +17,8 @@ const ImageInfo:  React.FC<IProps> = ({ item, onEdit }) => {
             <div className="img-box" onClick={() => onEdit(item.Name)}>
                 <img
                     className="img-info"
-                    src={item.Path}
+                    //небольшой хак, чтобы картинка не кэшировалась браузером и отображались все изменения
+                    src={`${IMAGE_URL}/${item.Id}?nocache=${new Date().getTime()}`}
                     alt={item.Name}
                 />
             </div>
