@@ -56,10 +56,12 @@ const CanvasCreator: React.FC<IProps> = ({ item }) => {
     }, [coordinates, item, size, prevSize]);
 
     const handleCanvasClick = React.useCallback((event) => {
-      const canvasObj = canvasRef.current as HTMLCanvasElement;
-      const currentCoord = getMousePosition(canvasObj, event);
-      setCoordinates([...coordinates, currentCoord]);
-    }, [setCoordinates, coordinates]);
+        if (size.Height && size.Width) {
+            const canvasObj = canvasRef.current as HTMLCanvasElement;
+            const currentCoord = getMousePosition(canvasObj, event);
+            setCoordinates([...coordinates, currentCoord]);
+        }
+    }, [setCoordinates, coordinates, size]);
 
     const handleClearCanvas = React.useCallback(() => setCoordinates([]), [setCoordinates]);
 
